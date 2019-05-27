@@ -58,6 +58,18 @@
     <Compile Include="DegitalNumber.Designer.cs">
       <DependentUpon>DegitalNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="DegitalNumberDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DegitalNumberDate.Designer.cs">
+      <DependentUpon>DegitalNumberDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DegitalNumberTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DegitalNumberTime.Designer.cs">
+      <DependentUpon>DegitalNumberTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DegitalNumber.resx">
       <DependentUpon>DegitalNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DegitalNumberDate.resx">
+      <DependentUpon>DegitalNumberDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DegitalNumberTime.resx">
+      <DependentUpon>DegitalNumberTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -97,6 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

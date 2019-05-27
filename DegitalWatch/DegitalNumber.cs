@@ -19,6 +19,12 @@ namespace DegitalWatch
         private LightUpPattern[] m_numberPatterns;
         #endregion
 
+        private Color defaltLightUpColor;
+
+
+
+
+
         #region メンバメソッド
         /// <summary>
         /// コンストラクタ
@@ -64,13 +70,13 @@ namespace DegitalWatch
         /// <param name="number"> デジタル表示したい数字 </param>
         private void DisplayNumber(LightUpPattern number)
         {
-            lblTopCenter.BackColor = number.TopCenter;
-            lblTopLeft.BackColor = number.TopLeft;
-            lblTopRight.BackColor = number.TopRight;
-            lblMiddleCenter.BackColor = number.MiddleCenter;
-            lblBottomRight.BackColor = number.BottomRight;
-            lblBottomLeft.BackColor = number.BottomLeft;
-            lblBottomCenter.BackColor = number.BottomCenter;
+            //lblTopCenter.BackColor = number.TopCenter;
+            //lblTopLeft.BackColor = number.TopLeft;
+            //lblTopRight.BackColor = number.TopRight;
+            //lblMiddleCenter.BackColor = number.MiddleCenter;
+            //lblBottomRight.BackColor = number.BottomRight;
+            //lblBottomLeft.BackColor = number.BottomLeft;
+            //lblBottomCenter.BackColor = number.BottomCenter;
         }
 
         /// <summary>
@@ -78,31 +84,30 @@ namespace DegitalWatch
         /// </summary>
         private void First()
         {
-            var _lightOn = SystemColors.ControlDarkDark;
-            var _lightOff = DefaultBackColor;
+            var _lightColor = SystemColors.ControlDarkDark;
 
              m_numberPatterns = new LightUpPattern[10]
             {
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,
-                                   _lightOff,_lightOn,_lightOn,_lightOn),
-                new LightUpPattern(_lightOff,_lightOff,_lightOn,
-                                   _lightOff,_lightOff,_lightOn,_lightOff),
-                new LightUpPattern(_lightOn,_lightOff,_lightOn,
-                                   _lightOn,_lightOn,_lightOff,_lightOn),
-                new LightUpPattern(_lightOn,_lightOff,_lightOn,
-                                   _lightOn,_lightOff,_lightOn,_lightOn),
-                new LightUpPattern(_lightOff,_lightOn,_lightOn,
-                                   _lightOn,_lightOff,_lightOn,_lightOff),
-                new LightUpPattern(_lightOn,_lightOn,_lightOff,
-                                   _lightOn,_lightOff,_lightOn,_lightOn),
-                new LightUpPattern(_lightOn,_lightOn,_lightOff,
-                                   _lightOn,_lightOn,_lightOn,_lightOn),
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,
-                                   _lightOff,_lightOff,_lightOn,_lightOff),
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,
-                                   _lightOn,_lightOn,_lightOn,_lightOn),
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,
-                                   _lightOn,_lightOff,_lightOn,_lightOn)
+                new LightUpPattern(_lightColor,true,true,true,
+                                   false,true,true,true),
+                new LightUpPattern(_lightColor,false,false,true,
+                                   false,false,true,false),
+                new LightUpPattern(_lightColor,true,false,true,
+                                   true,true,false,true),
+                new LightUpPattern(_lightColor,true,false,true,
+                                   true,false,true,true),
+                new LightUpPattern(_lightColor,false,true,true,
+                                   true,false,true,false),
+                new LightUpPattern(_lightColor,true,true,false,
+                                   true,false,true,true),
+                new LightUpPattern(_lightColor,true,true,false,
+                                   true,true,true,true),
+                new LightUpPattern(_lightColor,true,true,true,
+                                   false,false,true,false),
+                new LightUpPattern(_lightColor,true,true,true,
+                                   true,true,true,true),
+                new LightUpPattern(_lightColor,true,true,true,
+                                   true,false,true,true)
             };
         }
 
@@ -130,6 +135,22 @@ namespace DegitalWatch
                     break;
             }
         }
+
+        /// <summary>
+        /// 受け取った数字をデジタル表示する
+        /// </summary>
+        /// <param name="number"> デジタル表示したい数字 </param>
+        public void ShowNumber(string number)
+        {
+            var convertedNumber = 0;
+            var result = int.TryParse(number, out convertedNumber);
+            if (result)
+            {
+                ShowNumber(convertedNumber);
+            }
+        }
         #endregion
+
+
     }
 }

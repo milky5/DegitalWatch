@@ -10,33 +10,25 @@ namespace DegitalWatch
     /// <summary>
     /// デジタル表示の際の、光るパーツの組み合わせ
     /// </summary>
-    public struct LightUpPattern
+    public class LightUpPattern
     {
-        #region メンバ変数
-        public Color TopCenter;
-        public Color TopLeft;
-        public Color TopRight;
-        public Color MiddleCenter;
-        public Color BottomLeft;
-        public Color BottomRight;
-        public Color BottomCenter;
-        #endregion
-
         #region メンバメソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="TopCenter"> 最上部のパーツの色 </param>
-        /// <param name="TopLeft"> 上部左側のパーツの色 </param>
-        /// <param name="TopRight"> 上部右側のパーツの色 </param>
-        /// <param name="MiddleCenter"> 中央部のパーツの色 </param>
-        /// <param name="BottomLeft"> 下部左側のパーツの色 </param>
-        /// <param name="BottomRight"> 下部右側のパーツの色 </param>
-        /// <param name="BottomCenter"> 最下部のパーツの色 </param>
-        public LightUpPattern(Color TopCenter, Color TopLeft, Color TopRight, 
-                              Color MiddleCenter, Color BottomLeft, 
-                              Color BottomRight, Color BottomCenter)
+        /// <param name="lightUpColor"> 光らせる場合の色 </param>
+        /// <param name="TopCenter"> 最上部を光らせるか </param>
+        /// <param name="TopLeft"> 上部左側を光らせるか </param>
+        /// <param name="TopRight"> 上部右側を光らせるか </param>
+        /// <param name="MiddleCenter"> 中央部を光らせるか </param>
+        /// <param name="BottomLeft"> 下部左側を光らせるか </param>
+        /// <param name="BottomRight"> 下部右側を光らせるか </param>
+        /// <param name="BottomCenter"> 最下部を光らせるか </param>
+        public LightUpPattern(Color lightUpColor, bool TopCenter, bool TopLeft,
+                              bool TopRight, bool MiddleCenter, bool BottomLeft, 
+                              bool BottomRight, bool BottomCenter)
         {
+            this.lightUpColor = lightUpColor;
             this.TopCenter = TopCenter;
             this.TopLeft = TopLeft;
             this.TopRight = TopRight;
@@ -46,5 +38,41 @@ namespace DegitalWatch
             this.BottomCenter = BottomCenter;
         }
         #endregion
+
+        #region プロパティ
+        /// <summary>
+        /// 光らせる場合の色
+        /// </summary>
+        public Color lightUpColor { get; private set; }
+        /// <summary>
+        /// 最上部を光らせるか
+        /// </summary>
+        public bool TopCenter { get; private set; }
+        /// <summary>
+        /// 上部左側を光らせるか
+        /// </summary>
+        public bool TopLeft { get; private set; }
+        /// <summary>
+        /// 上部右側を光らせるか
+        /// </summary>
+        public bool TopRight { get; private set; }
+        /// <summary>
+        /// 中央部を光らせるか
+        /// </summary>
+        public bool MiddleCenter { get; private set; }
+        /// <summary>
+        /// 下部左側を光らせるか
+        /// </summary>
+        public bool BottomLeft { get; private set; }
+        /// <summary>
+        /// 下部右側を光らせるか
+        /// </summary>
+        public bool BottomRight { get; private set; }
+        /// <summary>
+        /// 最下部を光らせるか
+        /// </summary>
+        public bool BottomCenter { get; private set; }
+        #endregion
+
     }
 }

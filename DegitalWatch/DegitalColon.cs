@@ -35,13 +35,13 @@ namespace DegitalWatch
         {
             if (m_isLightUp)
             {
-                label1.BackColor = SystemColors.ControlDarkDark;
-                label2.BackColor = SystemColors.ControlDarkDark;
+                lblTopPeriod.BackColor = SystemColors.ControlDarkDark;
+                lblBottomPeriod.BackColor = SystemColors.ControlDarkDark;
             }
             else
             {
-                label1.BackColor = DefaultBackColor;
-                label2.BackColor = DefaultBackColor;
+                lblTopPeriod.BackColor = DefaultBackColor;
+                lblBottomPeriod.BackColor = DefaultBackColor;
             }
 
             m_isLightUp = !m_isLightUp;
