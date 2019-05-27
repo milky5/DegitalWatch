@@ -12,11 +12,14 @@ namespace DegitalWatch
 {
     public partial class DegitalNumber : UserControl
     {
+        #region メンバ変数
         /// <summary>
-        /// 0～9のパーツの組み合わせ方を保持する配列
+        /// 0～9の数字表示のパーツの組み合わせ方を保持
         /// </summary>
-        private NumberPattern[] numberPatterns;
+        private LightUpPattern[] m_numberPatterns;
+        #endregion
 
+        #region メンバメソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -28,6 +31,49 @@ namespace DegitalWatch
         }
 
         /// <summary>
+        /// サイズを最適化する
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DegitalNumber_Resize(object sender, EventArgs e)
+        {
+            // ラベルの初期サイズ 5 * 40
+            // コントロールの幅は 5 + 40 + 5、比率なら 1:8:1  = 10
+            var _oneUnit = Width / 10;
+
+            lblTopCenter.Location = new Point(_oneUnit, 0);
+            lblTopLeft.Location = new Point(0, _oneUnit);
+            lblTopRight.Location = new Point(9 * _oneUnit, _oneUnit);
+            lblMiddleCenter.Location = new Point(_oneUnit, 9 * _oneUnit);
+            lblBottomLeft.Location = new Point(0, 10 * _oneUnit);
+            lblBottomRight.Location = new Point(9 * _oneUnit, 10 * _oneUnit);
+            lblBottomCenter.Location = new Point(_oneUnit, 18 * _oneUnit);
+
+            lblTopCenter.Size = new Size(_oneUnit * 8, _oneUnit);
+            lblTopLeft.Size = new Size(_oneUnit, _oneUnit * 8);
+            lblTopRight.Size = new Size(_oneUnit, _oneUnit * 8);
+            lblMiddleCenter.Size = new Size(_oneUnit * 8, _oneUnit);
+            lblBottomLeft.Size = new Size(_oneUnit, _oneUnit * 8);
+            lblBottomRight.Size = new Size(_oneUnit, _oneUnit * 8);
+            lblBottomCenter.Size = new Size(_oneUnit * 8, _oneUnit);
+        }
+
+        /// <summary>
+        /// 数字をデジタル表示する
+        /// </summary>
+        /// <param name="number"> デジタル表示したい数字 </param>
+        private void DisplayNumber(LightUpPattern number)
+        {
+            lblTopCenter.BackColor = number.TopCenter;
+            lblTopLeft.BackColor = number.TopLeft;
+            lblTopRight.BackColor = number.TopRight;
+            lblMiddleCenter.BackColor = number.MiddleCenter;
+            lblBottomRight.BackColor = number.BottomRight;
+            lblBottomLeft.BackColor = number.BottomLeft;
+            lblBottomCenter.BackColor = number.BottomCenter;
+        }
+
+        /// <summary>
         /// 0～9のパーツの組み合わせ方を配列に代入する
         /// </summary>
         private void First()
@@ -35,18 +81,18 @@ namespace DegitalWatch
             var _lightOn = SystemColors.ControlDarkDark;
             var _lightOff = DefaultBackColor;
 
-             numberPatterns = new NumberPattern[10]
+             m_numberPatterns = new LightUpPattern[10]
             {
-                new NumberPattern(_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn,_lightOn),
-                new NumberPattern(_lightOff,_lightOff,_lightOn,_lightOff,_lightOff,_lightOn,_lightOff),
-                new NumberPattern(_lightOn,_lightOff,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn),
-                new NumberPattern(_lightOn,_lightOff,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn),
-                new NumberPattern(_lightOff,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOff),
-                new NumberPattern(_lightOn,_lightOn,_lightOff,_lightOn,_lightOff,_lightOn,_lightOn),
-                new NumberPattern(_lightOn,_lightOn,_lightOff,_lightOn,_lightOn,_lightOn,_lightOn),
-                new NumberPattern(_lightOn,_lightOn,_lightOn,_lightOff,_lightOff,_lightOn,_lightOff),
-                new NumberPattern(_lightOn,_lightOn,_lightOn,_lightOn,_lightOn,_lightOn,_lightOn),
-                new NumberPattern(_lightOn,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn)
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn,_lightOn),
+                new LightUpPattern(_lightOff,_lightOff,_lightOn,_lightOff,_lightOff,_lightOn,_lightOff),
+                new LightUpPattern(_lightOn,_lightOff,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn),
+                new LightUpPattern(_lightOn,_lightOff,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn),
+                new LightUpPattern(_lightOff,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOff),
+                new LightUpPattern(_lightOn,_lightOn,_lightOff,_lightOn,_lightOff,_lightOn,_lightOn),
+                new LightUpPattern(_lightOn,_lightOn,_lightOff,_lightOn,_lightOn,_lightOn,_lightOn),
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOff,_lightOff,_lightOn,_lightOff),
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOn,_lightOn,_lightOn,_lightOn),
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn)
             };
         }
 
@@ -54,7 +100,7 @@ namespace DegitalWatch
         /// 受け取った数字をデジタル表示する
         /// </summary>
         /// <param name="number"> デジタル表示したい数字 </param>
-        public void Show(int number)
+        public void ShowNumber(int number)
         {
             switch (number)
             {
@@ -68,65 +114,12 @@ namespace DegitalWatch
                 case 7:
                 case 8:
                 case 9:
-                    DisplayNumber(numberPatterns[number]);
+                    DisplayNumber(m_numberPatterns[number]);
                     break;
                 default:
                     break;
             }
         }
-
-        /// <summary>
-        /// 数字をデジタル表示する
-        /// </summary>
-        /// <param name="number"></param>
-        private void DisplayNumber(NumberPattern number)
-        {
-            lblTopCenter.BackColor = number.TopCenter;
-            lblTopLeft.BackColor = number.TopLeft;
-            lblTopRight.BackColor =  number.TopRight;
-            lblMiddleCenter.BackColor =  number.MiddleCenter;
-            lblBottomRight.BackColor =  number.BottomRight;
-            lblBottomLeft.BackColor =  number.BottomLeft;
-            lblBottomCenter.BackColor =  number.BottomCenter;
-        }
-
-        private void DegitalNumber_Resize(object sender, EventArgs e)
-        {
-        }
-    }
-
-    /// <summary>
-    /// デジタル数字表示の際の、光るパーツの組み合わせ
-    /// </summary>
-    public struct NumberPattern
-    {
-        public Color TopCenter;
-        public Color TopLeft;
-        public Color TopRight;
-        public Color MiddleCenter;
-        public Color BottomLeft;
-        public Color BottomRight;
-        public Color BottomCenter;
-
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
-        /// <param name="TopCenter"> 最上部のパーツの色 </param>
-        /// <param name="TopLeft"> 上部左側のパーツの色 </param>
-        /// <param name="TopRight"> 上部右側のパーツの色 </param>
-        /// <param name="MiddleCenter"> 中央部のパーツの色 </param>
-        /// <param name="BottomLeft"> 下部左側のパーツの色 </param>
-        /// <param name="BottomRight"> 下部右側のパーツの色 </param>
-        /// <param name="BottomCenter"> 最下部のパーツの色 </param>
-        public NumberPattern(Color TopCenter, Color TopLeft,Color TopRight,Color MiddleCenter,Color BottomLeft,Color BottomRight,Color BottomCenter)
-        {
-            this.TopCenter = TopCenter;
-            this.TopLeft = TopLeft;
-            this.TopRight = TopRight;
-            this.MiddleCenter = MiddleCenter;
-            this.BottomLeft = BottomLeft;
-            this.BottomRight = BottomRight;
-            this.BottomCenter = BottomCenter;
-        }
+        #endregion
     }
 }

@@ -12,8 +12,14 @@ namespace DegitalWatch
 {
     public partial class DegitalColon : UserControl
     {
+        #region メンバ変数
+        /// <summary>
+        /// コロンが点灯中か
+        /// </summary>
         private bool m_isLightUp;
+        #endregion
 
+        #region メンバメソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -40,5 +46,6 @@ namespace DegitalWatch
 
             m_isLightUp = !m_isLightUp;
         }
+        #endregion
     }
 }

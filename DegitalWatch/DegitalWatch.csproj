@@ -58,18 +58,13 @@
     <Compile Include="DegitalNumber.Designer.cs">
       <DependentUpon>DegitalNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="DegitalNumberMini.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DegitalNumberMini.Designer.cs">
-      <DependentUpon>DegitalNumberMini.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="LightUpPattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DegitalColon.resx">
@@ -77,9 +72,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DegitalNumber.resx">
       <DependentUpon>DegitalNumber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DegitalNumberMini.resx">
-      <DependentUpon>DegitalNumberMini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

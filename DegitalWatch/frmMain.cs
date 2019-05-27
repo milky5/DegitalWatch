@@ -12,7 +12,6 @@ namespace DegitalWatch
 {
     public partial class frmMain : Form
     {
-
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -23,6 +22,9 @@ namespace DegitalWatch
             timer1.Start();
         }
 
+        /// <summary>
+        /// 本日の日付をデジタル表示する
+        /// </summary>
         private void SetDate()
         {
             var _now = DateTime.Now;
@@ -31,17 +33,19 @@ namespace DegitalWatch
             _list.AddRange(SeparateToTwoNumber(_now.Month));
             _list.AddRange(SeparateToTwoNumber(_now.Day));
 
-            degitalNumberMinics1.Show(_list[0]);
-            degitalNumberMinics2.Show(_list[1]);
-            degitalNumberMinics3.Show(_list[2]);
-            degitalNumberMinics4.Show(_list[3]);
-            degitalNumberMinics5.Show(_list[4]);
-            degitalNumberMinics6.Show(_list[5]);
-            degitalNumberMinics7.Show(_list[6]);
-            degitalNumberMinics8.Show(_list[7]);
+            degitalNumber7.ShowNumber(_list[0]);
+            degitalNumber8.ShowNumber(_list[1]);
+            degitalNumber9.ShowNumber(_list[2]);
+            degitalNumber10.ShowNumber(_list[3]);
+            degitalNumber11.ShowNumber(_list[4]);
+            degitalNumber12.ShowNumber(_list[5]);
+            degitalNumber13.ShowNumber(_list[6]);
+            degitalNumber14.ShowNumber(_list[7]);
         }
 
-
+        /// <summary>
+        /// 現在の時刻をデジタル表示する
+        /// </summary>
         private void TimeUpdate()
         {
             var _now = DateTime.Now;
@@ -50,12 +54,12 @@ namespace DegitalWatch
             _list.AddRange(SeparateToTwoNumber(_now.Minute));
             _list.AddRange(SeparateToTwoNumber(_now.Second));
 
-            degitalNumber1.Show(_list[0]);
-            degitalNumber2.Show(_list[1]);
-            degitalNumber3.Show(_list[2]);
-            degitalNumber4.Show(_list[3]);
-            degitalNumber5.Show(_list[4]);
-            degitalNumber6.Show(_list[5]);
+            degitalNumber1.ShowNumber(_list[0]);
+            degitalNumber2.ShowNumber(_list[1]);
+            degitalNumber3.ShowNumber(_list[2]);
+            degitalNumber4.ShowNumber(_list[3]);
+            degitalNumber5.ShowNumber(_list[4]);
+            degitalNumber6.ShowNumber(_list[5]);
         }
 
         /// <summary>
@@ -90,24 +94,8 @@ namespace DegitalWatch
         }
 
 
-
-
-
-
-
         /// <summary>
-        /// デバッグ用
-        /// ボタンクリック時に呼ばれるメソッド
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDebug_Click(object sender, EventArgs e)
-        {
-            TimeUpdate();
-        }
-
-        /// <summary>
-        /// 0.5秒ごとに呼ばれる
+        /// TimerのIntervalごとに呼ばれる
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

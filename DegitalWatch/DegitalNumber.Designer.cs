@@ -106,7 +106,7 @@
             this.Controls.Add(this.lblMiddleCenter);
             this.Controls.Add(this.lblTopCenter);
             this.Name = "DegitalNumber";
-            this.Size = new System.Drawing.Size(53, 94);
+            this.Size = new System.Drawing.Size(50, 95);
             this.Resize += new System.EventHandler(this.DegitalNumber_Resize);
             this.ResumeLayout(false);
 
