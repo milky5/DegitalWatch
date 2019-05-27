@@ -12,6 +12,7 @@ namespace DegitalWatch
     /// </summary>
     public struct LightUpPattern
     {
+        #region メンバ変数
         public Color TopCenter;
         public Color TopLeft;
         public Color TopRight;
@@ -19,7 +20,9 @@ namespace DegitalWatch
         public Color BottomLeft;
         public Color BottomRight;
         public Color BottomCenter;
+        #endregion
 
+        #region メンバメソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -30,7 +33,9 @@ namespace DegitalWatch
         /// <param name="BottomLeft"> 下部左側のパーツの色 </param>
         /// <param name="BottomRight"> 下部右側のパーツの色 </param>
         /// <param name="BottomCenter"> 最下部のパーツの色 </param>
-        public LightUpPattern(Color TopCenter, Color TopLeft, Color TopRight, Color MiddleCenter, Color BottomLeft, Color BottomRight, Color BottomCenter)
+        public LightUpPattern(Color TopCenter, Color TopLeft, Color TopRight, 
+                              Color MiddleCenter, Color BottomLeft, 
+                              Color BottomRight, Color BottomCenter)
         {
             this.TopCenter = TopCenter;
             this.TopLeft = TopLeft;
@@ -40,5 +45,6 @@ namespace DegitalWatch
             this.BottomRight = BottomRight;
             this.BottomCenter = BottomCenter;
         }
+        #endregion
     }
 }

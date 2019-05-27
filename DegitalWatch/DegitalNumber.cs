@@ -83,16 +83,26 @@ namespace DegitalWatch
 
              m_numberPatterns = new LightUpPattern[10]
             {
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn,_lightOn),
-                new LightUpPattern(_lightOff,_lightOff,_lightOn,_lightOff,_lightOff,_lightOn,_lightOff),
-                new LightUpPattern(_lightOn,_lightOff,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn),
-                new LightUpPattern(_lightOn,_lightOff,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn),
-                new LightUpPattern(_lightOff,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOff),
-                new LightUpPattern(_lightOn,_lightOn,_lightOff,_lightOn,_lightOff,_lightOn,_lightOn),
-                new LightUpPattern(_lightOn,_lightOn,_lightOff,_lightOn,_lightOn,_lightOn,_lightOn),
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOff,_lightOff,_lightOn,_lightOff),
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOn,_lightOn,_lightOn,_lightOn),
-                new LightUpPattern(_lightOn,_lightOn,_lightOn,_lightOn,_lightOff,_lightOn,_lightOn)
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,
+                                   _lightOff,_lightOn,_lightOn,_lightOn),
+                new LightUpPattern(_lightOff,_lightOff,_lightOn,
+                                   _lightOff,_lightOff,_lightOn,_lightOff),
+                new LightUpPattern(_lightOn,_lightOff,_lightOn,
+                                   _lightOn,_lightOn,_lightOff,_lightOn),
+                new LightUpPattern(_lightOn,_lightOff,_lightOn,
+                                   _lightOn,_lightOff,_lightOn,_lightOn),
+                new LightUpPattern(_lightOff,_lightOn,_lightOn,
+                                   _lightOn,_lightOff,_lightOn,_lightOff),
+                new LightUpPattern(_lightOn,_lightOn,_lightOff,
+                                   _lightOn,_lightOff,_lightOn,_lightOn),
+                new LightUpPattern(_lightOn,_lightOn,_lightOff,
+                                   _lightOn,_lightOn,_lightOn,_lightOn),
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,
+                                   _lightOff,_lightOff,_lightOn,_lightOff),
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,
+                                   _lightOn,_lightOn,_lightOn,_lightOn),
+                new LightUpPattern(_lightOn,_lightOn,_lightOn,
+                                   _lightOn,_lightOff,_lightOn,_lightOn)
             };
         }
 

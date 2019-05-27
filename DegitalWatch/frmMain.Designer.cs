@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tmrUpdateTime = new System.Windows.Forms.Timer(this.components);
             this.lblYear = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
             this.lblDay = new System.Windows.Forms.Label();
-            this.degitalNumber14 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber13 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber12 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber11 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber10 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber9 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber8 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber7 = new DegitalWatch.DegitalNumber();
-            this.degitalColon2 = new DegitalWatch.DegitalColon();
-            this.degitalColon1 = new DegitalWatch.DegitalColon();
-            this.degitalNumber6 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber5 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber4 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber3 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber2 = new DegitalWatch.DegitalNumber();
-            this.degitalNumber1 = new DegitalWatch.DegitalNumber();
+            this.dnmDay1 = new DegitalWatch.DegitalNumber();
+            this.dnmDay10 = new DegitalWatch.DegitalNumber();
+            this.dnmMonth1 = new DegitalWatch.DegitalNumber();
+            this.dnmMonth10 = new DegitalWatch.DegitalNumber();
+            this.dnmYear1 = new DegitalWatch.DegitalNumber();
+            this.dnmYear10 = new DegitalWatch.DegitalNumber();
+            this.dnmYear100 = new DegitalWatch.DegitalNumber();
+            this.dnmYear1000 = new DegitalWatch.DegitalNumber();
+            this.dclMinAndSec = new DegitalWatch.DegitalColon();
+            this.dclHourAndMin = new DegitalWatch.DegitalColon();
+            this.dnmSec1 = new DegitalWatch.DegitalNumber();
+            this.dnmSec10 = new DegitalWatch.DegitalNumber();
+            this.dnmMin1 = new DegitalWatch.DegitalNumber();
+            this.dnmMin10 = new DegitalWatch.DegitalNumber();
+            this.dnmHour1 = new DegitalWatch.DegitalNumber();
+            this.dnmHour10 = new DegitalWatch.DegitalNumber();
             this.SuspendLayout();
             // 
-            // timer1
+            // tmrUpdateTime
             // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.tmrUpdateTime.Interval = 500;
+            this.tmrUpdateTime.Tick += new System.EventHandler(this.tmrUpdateTime_Tick);
             // 
             // lblYear
             // 
@@ -88,176 +88,176 @@
             this.lblDay.TabIndex = 20;
             this.lblDay.Text = "日";
             // 
-            // degitalNumber14
+            // dnmDay1
             // 
-            this.degitalNumber14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.degitalNumber14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber14.Location = new System.Drawing.Point(374, 12);
-            this.degitalNumber14.Name = "degitalNumber14";
-            this.degitalNumber14.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber14.TabIndex = 28;
+            this.dnmDay1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dnmDay1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmDay1.Location = new System.Drawing.Point(374, 12);
+            this.dnmDay1.Name = "dnmDay1";
+            this.dnmDay1.Size = new System.Drawing.Size(41, 75);
+            this.dnmDay1.TabIndex = 28;
             // 
-            // degitalNumber13
+            // dnmDay10
             // 
-            this.degitalNumber13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.degitalNumber13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber13.Location = new System.Drawing.Point(329, 12);
-            this.degitalNumber13.Name = "degitalNumber13";
-            this.degitalNumber13.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber13.TabIndex = 27;
+            this.dnmDay10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dnmDay10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmDay10.Location = new System.Drawing.Point(329, 12);
+            this.dnmDay10.Name = "dnmDay10";
+            this.dnmDay10.Size = new System.Drawing.Size(41, 75);
+            this.dnmDay10.TabIndex = 27;
             // 
-            // degitalNumber12
+            // dnmMonth1
             // 
-            this.degitalNumber12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.degitalNumber12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber12.Location = new System.Drawing.Point(263, 12);
-            this.degitalNumber12.Name = "degitalNumber12";
-            this.degitalNumber12.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber12.TabIndex = 26;
+            this.dnmMonth1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dnmMonth1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmMonth1.Location = new System.Drawing.Point(263, 12);
+            this.dnmMonth1.Name = "dnmMonth1";
+            this.dnmMonth1.Size = new System.Drawing.Size(41, 75);
+            this.dnmMonth1.TabIndex = 26;
             // 
-            // degitalNumber11
+            // dnmMonth10
             // 
-            this.degitalNumber11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.degitalNumber11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber11.Location = new System.Drawing.Point(216, 12);
-            this.degitalNumber11.Name = "degitalNumber11";
-            this.degitalNumber11.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber11.TabIndex = 25;
+            this.dnmMonth10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dnmMonth10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmMonth10.Location = new System.Drawing.Point(216, 12);
+            this.dnmMonth10.Name = "dnmMonth10";
+            this.dnmMonth10.Size = new System.Drawing.Size(41, 75);
+            this.dnmMonth10.TabIndex = 25;
             // 
-            // degitalNumber10
+            // dnmYear1
             // 
-            this.degitalNumber10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber10.Location = new System.Drawing.Point(156, 12);
-            this.degitalNumber10.Name = "degitalNumber10";
-            this.degitalNumber10.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber10.TabIndex = 24;
+            this.dnmYear1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmYear1.Location = new System.Drawing.Point(156, 12);
+            this.dnmYear1.Name = "dnmYear1";
+            this.dnmYear1.Size = new System.Drawing.Size(41, 75);
+            this.dnmYear1.TabIndex = 24;
             // 
-            // degitalNumber9
+            // dnmYear10
             // 
-            this.degitalNumber9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber9.Location = new System.Drawing.Point(109, 12);
-            this.degitalNumber9.Name = "degitalNumber9";
-            this.degitalNumber9.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber9.TabIndex = 23;
+            this.dnmYear10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmYear10.Location = new System.Drawing.Point(109, 12);
+            this.dnmYear10.Name = "dnmYear10";
+            this.dnmYear10.Size = new System.Drawing.Size(41, 75);
+            this.dnmYear10.TabIndex = 23;
             // 
-            // degitalNumber8
+            // dnmYear100
             // 
-            this.degitalNumber8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber8.Location = new System.Drawing.Point(62, 12);
-            this.degitalNumber8.Name = "degitalNumber8";
-            this.degitalNumber8.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber8.TabIndex = 22;
+            this.dnmYear100.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmYear100.Location = new System.Drawing.Point(62, 12);
+            this.dnmYear100.Name = "dnmYear100";
+            this.dnmYear100.Size = new System.Drawing.Size(41, 75);
+            this.dnmYear100.TabIndex = 22;
             // 
-            // degitalNumber7
+            // dnmYear1000
             // 
-            this.degitalNumber7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber7.Location = new System.Drawing.Point(13, 12);
-            this.degitalNumber7.Name = "degitalNumber7";
-            this.degitalNumber7.Size = new System.Drawing.Size(41, 75);
-            this.degitalNumber7.TabIndex = 21;
+            this.dnmYear1000.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmYear1000.Location = new System.Drawing.Point(13, 12);
+            this.dnmYear1000.Name = "dnmYear1000";
+            this.dnmYear1000.Size = new System.Drawing.Size(41, 75);
+            this.dnmYear1000.TabIndex = 21;
             // 
-            // degitalColon2
+            // dclMinAndSec
             // 
-            this.degitalColon2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.degitalColon2.Location = new System.Drawing.Point(282, 116);
-            this.degitalColon2.Name = "degitalColon2";
-            this.degitalColon2.Size = new System.Drawing.Size(30, 96);
-            this.degitalColon2.TabIndex = 7;
+            this.dclMinAndSec.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dclMinAndSec.Location = new System.Drawing.Point(282, 116);
+            this.dclMinAndSec.Name = "dclMinAndSec";
+            this.dclMinAndSec.Size = new System.Drawing.Size(30, 96);
+            this.dclMinAndSec.TabIndex = 7;
             // 
-            // degitalColon1
+            // dclHourAndMin
             // 
-            this.degitalColon1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.degitalColon1.Location = new System.Drawing.Point(132, 116);
-            this.degitalColon1.Name = "degitalColon1";
-            this.degitalColon1.Size = new System.Drawing.Size(30, 96);
-            this.degitalColon1.TabIndex = 6;
+            this.dclHourAndMin.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dclHourAndMin.Location = new System.Drawing.Point(132, 116);
+            this.dclHourAndMin.Name = "dclHourAndMin";
+            this.dclHourAndMin.Size = new System.Drawing.Size(30, 96);
+            this.dclHourAndMin.TabIndex = 6;
             // 
-            // degitalNumber6
+            // dnmSec1
             // 
-            this.degitalNumber6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.degitalNumber6.AutoSize = true;
-            this.degitalNumber6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber6.Location = new System.Drawing.Point(374, 116);
-            this.degitalNumber6.Name = "degitalNumber6";
-            this.degitalNumber6.Size = new System.Drawing.Size(53, 95);
-            this.degitalNumber6.TabIndex = 5;
+            this.dnmSec1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dnmSec1.AutoSize = true;
+            this.dnmSec1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmSec1.Location = new System.Drawing.Point(374, 116);
+            this.dnmSec1.Name = "dnmSec1";
+            this.dnmSec1.Size = new System.Drawing.Size(53, 95);
+            this.dnmSec1.TabIndex = 5;
             // 
-            // degitalNumber5
+            // dnmSec10
             // 
-            this.degitalNumber5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.degitalNumber5.AutoSize = true;
-            this.degitalNumber5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber5.Location = new System.Drawing.Point(317, 116);
-            this.degitalNumber5.Name = "degitalNumber5";
-            this.degitalNumber5.Size = new System.Drawing.Size(53, 95);
-            this.degitalNumber5.TabIndex = 4;
+            this.dnmSec10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dnmSec10.AutoSize = true;
+            this.dnmSec10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmSec10.Location = new System.Drawing.Point(317, 116);
+            this.dnmSec10.Name = "dnmSec10";
+            this.dnmSec10.Size = new System.Drawing.Size(53, 95);
+            this.dnmSec10.TabIndex = 4;
             // 
-            // degitalNumber4
+            // dnmMin1
             // 
-            this.degitalNumber4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.degitalNumber4.AutoSize = true;
-            this.degitalNumber4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber4.Location = new System.Drawing.Point(225, 116);
-            this.degitalNumber4.Name = "degitalNumber4";
-            this.degitalNumber4.Size = new System.Drawing.Size(53, 95);
-            this.degitalNumber4.TabIndex = 3;
+            this.dnmMin1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dnmMin1.AutoSize = true;
+            this.dnmMin1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmMin1.Location = new System.Drawing.Point(225, 116);
+            this.dnmMin1.Name = "dnmMin1";
+            this.dnmMin1.Size = new System.Drawing.Size(53, 95);
+            this.dnmMin1.TabIndex = 3;
             // 
-            // degitalNumber3
+            // dnmMin10
             // 
-            this.degitalNumber3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.degitalNumber3.AutoSize = true;
-            this.degitalNumber3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber3.Location = new System.Drawing.Point(168, 116);
-            this.degitalNumber3.Name = "degitalNumber3";
-            this.degitalNumber3.Size = new System.Drawing.Size(53, 95);
-            this.degitalNumber3.TabIndex = 2;
+            this.dnmMin10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dnmMin10.AutoSize = true;
+            this.dnmMin10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmMin10.Location = new System.Drawing.Point(168, 116);
+            this.dnmMin10.Name = "dnmMin10";
+            this.dnmMin10.Size = new System.Drawing.Size(53, 95);
+            this.dnmMin10.TabIndex = 2;
             // 
-            // degitalNumber2
+            // dnmHour1
             // 
-            this.degitalNumber2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.degitalNumber2.AutoSize = true;
-            this.degitalNumber2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber2.Location = new System.Drawing.Point(70, 116);
-            this.degitalNumber2.Name = "degitalNumber2";
-            this.degitalNumber2.Size = new System.Drawing.Size(53, 95);
-            this.degitalNumber2.TabIndex = 1;
+            this.dnmHour1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dnmHour1.AutoSize = true;
+            this.dnmHour1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmHour1.Location = new System.Drawing.Point(70, 116);
+            this.dnmHour1.Name = "dnmHour1";
+            this.dnmHour1.Size = new System.Drawing.Size(53, 95);
+            this.dnmHour1.TabIndex = 1;
             // 
-            // degitalNumber1
+            // dnmHour10
             // 
-            this.degitalNumber1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.degitalNumber1.AutoSize = true;
-            this.degitalNumber1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.degitalNumber1.Location = new System.Drawing.Point(13, 116);
-            this.degitalNumber1.Name = "degitalNumber1";
-            this.degitalNumber1.Size = new System.Drawing.Size(53, 95);
-            this.degitalNumber1.TabIndex = 0;
+            this.dnmHour10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dnmHour10.AutoSize = true;
+            this.dnmHour10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dnmHour10.Location = new System.Drawing.Point(13, 116);
+            this.dnmHour10.Name = "dnmHour10";
+            this.dnmHour10.Size = new System.Drawing.Size(53, 95);
+            this.dnmHour10.TabIndex = 0;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 225);
-            this.Controls.Add(this.degitalNumber14);
-            this.Controls.Add(this.degitalNumber13);
-            this.Controls.Add(this.degitalNumber12);
-            this.Controls.Add(this.degitalNumber11);
-            this.Controls.Add(this.degitalNumber10);
-            this.Controls.Add(this.degitalNumber9);
-            this.Controls.Add(this.degitalNumber8);
-            this.Controls.Add(this.degitalNumber7);
+            this.Controls.Add(this.dnmDay1);
+            this.Controls.Add(this.dnmDay10);
+            this.Controls.Add(this.dnmMonth1);
+            this.Controls.Add(this.dnmMonth10);
+            this.Controls.Add(this.dnmYear1);
+            this.Controls.Add(this.dnmYear10);
+            this.Controls.Add(this.dnmYear100);
+            this.Controls.Add(this.dnmYear1000);
             this.Controls.Add(this.lblDay);
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.lblYear);
-            this.Controls.Add(this.degitalColon2);
-            this.Controls.Add(this.degitalColon1);
-            this.Controls.Add(this.degitalNumber6);
-            this.Controls.Add(this.degitalNumber5);
-            this.Controls.Add(this.degitalNumber4);
-            this.Controls.Add(this.degitalNumber3);
-            this.Controls.Add(this.degitalNumber2);
-            this.Controls.Add(this.degitalNumber1);
+            this.Controls.Add(this.dclMinAndSec);
+            this.Controls.Add(this.dclHourAndMin);
+            this.Controls.Add(this.dnmSec1);
+            this.Controls.Add(this.dnmSec10);
+            this.Controls.Add(this.dnmMin1);
+            this.Controls.Add(this.dnmMin10);
+            this.Controls.Add(this.dnmHour1);
+            this.Controls.Add(this.dnmHour10);
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "デジタル時計";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,26 +265,26 @@
 
         #endregion
 
-        private DegitalNumber degitalNumber1;
-        private DegitalNumber degitalNumber2;
-        private DegitalNumber degitalNumber3;
-        private DegitalNumber degitalNumber4;
-        private DegitalNumber degitalNumber5;
-        private DegitalNumber degitalNumber6;
-        private DegitalColon degitalColon1;
-        private DegitalColon degitalColon2;
-        private System.Windows.Forms.Timer timer1;
+        private DegitalNumber dnmHour10;
+        private DegitalNumber dnmHour1;
+        private DegitalNumber dnmMin10;
+        private DegitalNumber dnmMin1;
+        private DegitalNumber dnmSec10;
+        private DegitalNumber dnmSec1;
+        private DegitalColon dclHourAndMin;
+        private DegitalColon dclMinAndSec;
+        private System.Windows.Forms.Timer tmrUpdateTime;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Label lblDay;
-        private DegitalNumber degitalNumber7;
-        private DegitalNumber degitalNumber8;
-        private DegitalNumber degitalNumber9;
-        private DegitalNumber degitalNumber10;
-        private DegitalNumber degitalNumber11;
-        private DegitalNumber degitalNumber12;
-        private DegitalNumber degitalNumber13;
-        private DegitalNumber degitalNumber14;
+        private DegitalNumber dnmYear1000;
+        private DegitalNumber dnmYear100;
+        private DegitalNumber dnmYear10;
+        private DegitalNumber dnmYear1;
+        private DegitalNumber dnmMonth10;
+        private DegitalNumber dnmMonth1;
+        private DegitalNumber dnmDay10;
+        private DegitalNumber dnmDay1;
     }
 }
 
