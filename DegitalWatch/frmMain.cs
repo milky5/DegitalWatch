@@ -18,6 +18,7 @@ namespace DegitalWatch
         public frmMain()
         {
             InitializeComponent();
+            MinimumSize = new Size(Width, Height);
             SetDate();
             timer1.Start();
         }

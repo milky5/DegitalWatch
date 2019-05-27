@@ -68,6 +68,7 @@
             // 
             // lblMonth
             // 
+            this.lblMonth.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMonth.AutoSize = true;
             this.lblMonth.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblMonth.Location = new System.Drawing.Point(306, 71);
@@ -78,6 +79,7 @@
             // 
             // lblDay
             // 
+            this.lblDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDay.AutoSize = true;
             this.lblDay.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDay.Location = new System.Drawing.Point(421, 71);
@@ -88,6 +90,7 @@
             // 
             // degitalNumber14
             // 
+            this.degitalNumber14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.degitalNumber14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber14.Location = new System.Drawing.Point(374, 12);
             this.degitalNumber14.Name = "degitalNumber14";
@@ -96,6 +99,7 @@
             // 
             // degitalNumber13
             // 
+            this.degitalNumber13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.degitalNumber13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber13.Location = new System.Drawing.Point(329, 12);
             this.degitalNumber13.Name = "degitalNumber13";
@@ -104,6 +108,7 @@
             // 
             // degitalNumber12
             // 
+            this.degitalNumber12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.degitalNumber12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber12.Location = new System.Drawing.Point(263, 12);
             this.degitalNumber12.Name = "degitalNumber12";
@@ -112,6 +117,7 @@
             // 
             // degitalNumber11
             // 
+            this.degitalNumber11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.degitalNumber11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber11.Location = new System.Drawing.Point(216, 12);
             this.degitalNumber11.Name = "degitalNumber11";
@@ -152,6 +158,7 @@
             // 
             // degitalColon2
             // 
+            this.degitalColon2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.degitalColon2.Location = new System.Drawing.Point(282, 116);
             this.degitalColon2.Name = "degitalColon2";
             this.degitalColon2.Size = new System.Drawing.Size(30, 96);
@@ -159,6 +166,7 @@
             // 
             // degitalColon1
             // 
+            this.degitalColon1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.degitalColon1.Location = new System.Drawing.Point(132, 116);
             this.degitalColon1.Name = "degitalColon1";
             this.degitalColon1.Size = new System.Drawing.Size(30, 96);
@@ -166,6 +174,7 @@
             // 
             // degitalNumber6
             // 
+            this.degitalNumber6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.degitalNumber6.AutoSize = true;
             this.degitalNumber6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber6.Location = new System.Drawing.Point(374, 116);
@@ -175,6 +184,7 @@
             // 
             // degitalNumber5
             // 
+            this.degitalNumber5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.degitalNumber5.AutoSize = true;
             this.degitalNumber5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber5.Location = new System.Drawing.Point(317, 116);
@@ -184,6 +194,7 @@
             // 
             // degitalNumber4
             // 
+            this.degitalNumber4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.degitalNumber4.AutoSize = true;
             this.degitalNumber4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber4.Location = new System.Drawing.Point(225, 116);
@@ -193,6 +204,7 @@
             // 
             // degitalNumber3
             // 
+            this.degitalNumber3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.degitalNumber3.AutoSize = true;
             this.degitalNumber3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber3.Location = new System.Drawing.Point(168, 116);
@@ -202,6 +214,7 @@
             // 
             // degitalNumber2
             // 
+            this.degitalNumber2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.degitalNumber2.AutoSize = true;
             this.degitalNumber2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber2.Location = new System.Drawing.Point(70, 116);
@@ -211,6 +224,7 @@
             // 
             // degitalNumber1
             // 
+            this.degitalNumber1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.degitalNumber1.AutoSize = true;
             this.degitalNumber1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.degitalNumber1.Location = new System.Drawing.Point(13, 116);
