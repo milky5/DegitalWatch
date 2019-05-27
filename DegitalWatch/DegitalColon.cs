@@ -12,7 +12,7 @@ namespace DegitalWatch
 {
     public partial class DegitalColon : UserControl
     {
-        private bool m_isLightUp = true;
+        private bool m_isLightUp;
 
         /// <summary>
         /// コンストラクタ

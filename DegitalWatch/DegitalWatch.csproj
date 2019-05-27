@@ -58,6 +58,12 @@
     <Compile Include="DegitalNumber.Designer.cs">
       <DependentUpon>DegitalNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="DegitalNumberMini.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DegitalNumberMini.Designer.cs">
+      <DependentUpon>DegitalNumberMini.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DegitalNumber.resx">
       <DependentUpon>DegitalNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DegitalNumberMini.resx">
+      <DependentUpon>DegitalNumberMini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

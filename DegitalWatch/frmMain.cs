@@ -12,7 +12,6 @@ namespace DegitalWatch
 {
     public partial class frmMain : Form
     {
-        bool _first = true;
 
         /// <summary>
         /// コンストラクタ
@@ -20,19 +19,36 @@ namespace DegitalWatch
         public frmMain()
         {
             InitializeComponent();
+            SetDate();
             timer1.Start();
         }
 
-
-        void Test()
+        private void SetDate()
         {
             var _now = DateTime.Now;
-            var _list = new List<int>();       
+            var _list = new List<int>();
+            _list = SeparateToFourNumber(_now.Year);
+            _list.AddRange(SeparateToTwoNumber(_now.Month));
+            _list.AddRange(SeparateToTwoNumber(_now.Day));
+
+            degitalNumberMinics1.Show(_list[0]);
+            degitalNumberMinics2.Show(_list[1]);
+            degitalNumberMinics3.Show(_list[2]);
+            degitalNumberMinics4.Show(_list[3]);
+            degitalNumberMinics5.Show(_list[4]);
+            degitalNumberMinics6.Show(_list[5]);
+            degitalNumberMinics7.Show(_list[6]);
+            degitalNumberMinics8.Show(_list[7]);
+        }
+
+
+        private void TimeUpdate()
+        {
+            var _now = DateTime.Now;
+            var _list = new List<int>();
             _list = SeparateToTwoNumber(_now.Hour);
             _list.AddRange(SeparateToTwoNumber(_now.Minute));
             _list.AddRange(SeparateToTwoNumber(_now.Second));
-
-            lblDebug.Text = $"{_list[0]}{_list[1]}:{_list[2]}{_list[3]}:{_list[4]}{_list[5]}";
 
             degitalNumber1.Show(_list[0]);
             degitalNumber2.Show(_list[1]);
@@ -56,6 +72,22 @@ namespace DegitalWatch
             return _numbers;
         }
 
+        /// <summary>
+        /// 4桁の数字をそれぞれの位に分ける
+        /// </summary>
+        /// <param name="number"> 4桁の数字 </param>
+        /// <returns> 位毎の数字が格納されたリスト </returns>
+        private List<int> SeparateToFourNumber(int number)
+        {
+            var _charNumbers = number.ToString().ToCharArray();
+            var _numbers = new List<int>();
+            foreach (var n in _charNumbers)
+            {
+                _numbers.Add(int.Parse(n.ToString()));
+            }
+
+            return _numbers;
+        }
 
 
 
@@ -71,7 +103,7 @@ namespace DegitalWatch
         /// <param name="e"></param>
         private void btnDebug_Click(object sender, EventArgs e)
         {
-            Test();
+            TimeUpdate();
         }
 
         /// <summary>
@@ -84,7 +116,7 @@ namespace DegitalWatch
             degitalColon1.SwitchOnOff();
             degitalColon2.SwitchOnOff();
 
-            Test();
+            TimeUpdate();
         }
     }
 }
