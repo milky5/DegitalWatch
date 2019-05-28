@@ -60,12 +60,6 @@ namespace DegitalWatch
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = DateTime.Now.ToString("yyyyMMdd");
-        }
-
-
         #region プロパティ
         public Color LightUpColor { get; set; }
         #endregion

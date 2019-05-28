@@ -23,3 +23,15 @@ yyyy:mm:dd
 
 
 ユーザコントロールの中にユーザコントロール
+
+
+degitalNumberTime.DisplayTime("5時34分3秒", LightUpColor);
+degitalNumberTime.DisplayTime("7:5:3", LightUpColor);
+degitalNumberTime.DisplayTime("07:22:16", LightUpColor);
+
+degitalNumberDate.DisplayDate("4/7", LightUpColor);
+degitalNumberDate.DisplayDate("2018/4", LightUpColor);
+degitalNumberDate.DisplayDate("2018/4/7", LightUpColor);
+degitalNumberDate.DisplayDate("2018/04/07", LightUpColor);
+degitalNumberDate.DisplayDate("平成30年6月29日", LightUpColor);
+degitalNumberDate.DisplayDate("1980年6月29日", LightUpColor);
