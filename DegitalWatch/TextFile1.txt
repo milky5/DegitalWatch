@@ -35,3 +35,6 @@ degitalNumberDate.DisplayDate("2018/4/7", LightUpColor);
 degitalNumberDate.DisplayDate("2018/04/07", LightUpColor);
 degitalNumberDate.DisplayDate("平成30年6月29日", LightUpColor);
 degitalNumberDate.DisplayDate("1980年6月29日", LightUpColor);
+
+
+http://increment-i.hateblo.jp/entry/visualstudio/online/git/branch
