@@ -17,18 +17,30 @@ namespace DegitalWatch
             InitializeComponent();
         }
 
-        public void ShowNumber(int number)
+        public void DisplayTime(DateTime time,Color color)
         {
-            //dnmHour10.ShowNumber();
-            //dnmHour1.ShowNumber();
-            //dnmMin10.ShowNumber();
-            //dnmMin1.ShowNumber();
-            //dnmSec10.ShowNumber();
-            //dnmSec1.ShowNumber();
+            dnmHour10.DisplayNumber(time.Hour % 100,color);
+            dnmHour1.DisplayNumber(time.Hour % 10, color);
+            dnmMin10.DisplayNumber(time.Minute % 100, color);
+            dnmMin1.DisplayNumber(time.Minute % 10, color);
+            dnmSec10.DisplayNumber(time.Second % 100, color);
+            dnmSec1.DisplayNumber(time.Second % 10, color);
         }
-        public void ShowNumber(DateTime date)
+        public void DisplayTime(string time, Color color)
         {
+            DateTime _time;
+            var _result = DateTime.TryParse(time, out _time);
+            if (_result)
+            {
+                DisplayTime(_time, color);
+            }
+        }
 
+        public void SwitchOnOff()
+        {
+            dclHourAndMin.SwitchOnOff();
+            dclMinAndSec.SwitchOnOff();
         }
+
     }
 }

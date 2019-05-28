@@ -13,27 +13,21 @@ namespace DegitalWatch
     public partial class DegitalNumber : UserControl
     {
         #region メンバ変数
-        /// <summary>
-        /// 0～9の数字表示のパーツの組み合わせ方を保持
-        /// </summary>
-        private LightUpPattern[] m_numberPatterns;
         #endregion
 
-        private Color defaltLightUpColor;
 
 
 
 
 
         #region メンバメソッド
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
         public DegitalNumber()
         {
             InitializeComponent();
-
-            First();
         }
 
         /// <summary>
@@ -68,85 +62,94 @@ namespace DegitalWatch
         /// 数字をデジタル表示する
         /// </summary>
         /// <param name="number"> デジタル表示したい数字 </param>
-        private void DisplayNumber(LightUpPattern number)
+        public void DisplayNumber(LightUpPattern number,Color color)
         {
-            //lblTopCenter.BackColor = number.TopCenter;
-            //lblTopLeft.BackColor = number.TopLeft;
-            //lblTopRight.BackColor = number.TopRight;
-            //lblMiddleCenter.BackColor = number.MiddleCenter;
-            //lblBottomRight.BackColor = number.BottomRight;
-            //lblBottomLeft.BackColor = number.BottomLeft;
-            //lblBottomCenter.BackColor = number.BottomCenter;
+            if (number.TopCenter)
+            {
+                lblTopCenter.BackColor = color;
+            }
+            else
+            {
+                lblTopCenter.BackColor = DefaultBackColor;
+            }
+
+            if (number.TopLeft)
+            {
+                lblTopLeft.BackColor = color;
+            }
+            else
+            {
+                lblTopLeft.BackColor = DefaultBackColor;
+            }
+
+            if (number.TopRight)
+            {
+                lblTopRight.BackColor = color;
+            }
+            else
+            {
+                lblTopRight.BackColor = DefaultBackColor;
+            }
+
+            if (number.MiddleCenter)
+            {
+                lblMiddleCenter.BackColor = color;
+            }
+            else
+            {
+                lblMiddleCenter.BackColor = DefaultBackColor;
+            }
+
+            if (number.BottomRight)
+            {
+                lblBottomRight.BackColor = color;
+            }
+            else
+            {
+                lblBottomRight.BackColor = DefaultBackColor;
+            }
+
+            if (number.BottomLeft)
+            {
+                lblBottomLeft.BackColor = color;
+            }
+            else
+            {
+                lblBottomLeft.BackColor = DefaultBackColor;
+            }
+
+            if (number.BottomCenter)
+            {
+                lblBottomCenter.BackColor = color;
+            }
+            else
+            {
+                lblBottomCenter.BackColor = DefaultBackColor;
+            }
+            
+            
         }
 
-        /// <summary>
-        /// 0～9のパーツの組み合わせ方を配列に代入する
-        /// </summary>
-        private void First()
+        public Color ConvertBoolToColor(LightUpPattern number,Color color)
         {
-            var _lightColor = SystemColors.ControlDarkDark;
-
-             m_numberPatterns = new LightUpPattern[10]
-            {
-                new LightUpPattern(_lightColor,true,true,true,
-                                   false,true,true,true),
-                new LightUpPattern(_lightColor,false,false,true,
-                                   false,false,true,false),
-                new LightUpPattern(_lightColor,true,false,true,
-                                   true,true,false,true),
-                new LightUpPattern(_lightColor,true,false,true,
-                                   true,false,true,true),
-                new LightUpPattern(_lightColor,false,true,true,
-                                   true,false,true,false),
-                new LightUpPattern(_lightColor,true,true,false,
-                                   true,false,true,true),
-                new LightUpPattern(_lightColor,true,true,false,
-                                   true,true,true,true),
-                new LightUpPattern(_lightColor,true,true,true,
-                                   false,false,true,false),
-                new LightUpPattern(_lightColor,true,true,true,
-                                   true,true,true,true),
-                new LightUpPattern(_lightColor,true,true,true,
-                                   true,false,true,true)
-            };
+            return color;
         }
 
-        /// <summary>
-        /// 受け取った数字をデジタル表示する
-        /// </summary>
-        /// <param name="number"> デジタル表示したい数字 </param>
-        public void ShowNumber(int number)
+        public void DisplayNumber(int number,Color color)
         {
-            switch (number)
+            if (0 <= number && number <= 9)
             {
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                    DisplayNumber(m_numberPatterns[number]);
-                    break;
-                default:
-                    break;
+                DisplayNumber(LightUpPattern.m_numberPatterns[number], color);
             }
         }
 
-        /// <summary>
-        /// 受け取った数字をデジタル表示する
-        /// </summary>
-        /// <param name="number"> デジタル表示したい数字 </param>
-        public void ShowNumber(string number)
+        public void DisplayNumber(string number,Color color)
         {
-            var convertedNumber = 0;
-            var result = int.TryParse(number, out convertedNumber);
-            if (result)
+            var _convertedNumber = 10;
+            var _result = int.TryParse(number, out _convertedNumber);
+            if (_result)
             {
-                ShowNumber(convertedNumber);
+                DisplayNumber(_convertedNumber, color);
             }
         }
         #endregion

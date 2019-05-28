@@ -12,6 +12,32 @@ namespace DegitalWatch
     /// </summary>
     public class LightUpPattern
     {
+        public static readonly LightUpPattern[] m_numberPatterns =
+    {
+                new LightUpPattern(true,true,true,
+                                   false,true,true,true),
+                new LightUpPattern(false,false,true,
+                                   false,false,true,false),
+                new LightUpPattern(true,false,true,
+                                   true,true,false,true),
+                new LightUpPattern(true,false,true,
+                                   true,false,true,true),
+                new LightUpPattern(false,true,true,
+                                   true,false,true,false),
+                new LightUpPattern(true,true,false,
+                                   true,false,true,true),
+                new LightUpPattern(true,true,false,
+                                   true,true,true,true),
+                new LightUpPattern(true,true,true,
+                                   false,false,true,false),
+                new LightUpPattern(true,true,true,
+                                   true,true,true,true),
+                new LightUpPattern(true,true,true,
+                                   true,false,true,true)
+    };
+
+
+
         #region メンバメソッド
         /// <summary>
         /// コンストラクタ
@@ -24,11 +50,10 @@ namespace DegitalWatch
         /// <param name="BottomLeft"> 下部左側を光らせるか </param>
         /// <param name="BottomRight"> 下部右側を光らせるか </param>
         /// <param name="BottomCenter"> 最下部を光らせるか </param>
-        public LightUpPattern(Color lightUpColor, bool TopCenter, bool TopLeft,
+        public LightUpPattern(bool TopCenter, bool TopLeft,
                               bool TopRight, bool MiddleCenter, bool BottomLeft, 
                               bool BottomRight, bool BottomCenter)
         {
-            this.lightUpColor = lightUpColor;
             this.TopCenter = TopCenter;
             this.TopLeft = TopLeft;
             this.TopRight = TopRight;
@@ -40,10 +65,6 @@ namespace DegitalWatch
         #endregion
 
         #region プロパティ
-        /// <summary>
-        /// 光らせる場合の色
-        /// </summary>
-        public Color lightUpColor { get; private set; }
         /// <summary>
         /// 最上部を光らせるか
         /// </summary>

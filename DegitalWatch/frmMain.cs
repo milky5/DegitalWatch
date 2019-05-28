@@ -13,6 +13,8 @@ namespace DegitalWatch
     public partial class frmMain : Form
     {
 
+        private Color m_lightUpColor = SystemColors.ControlDarkDark;
+
         #region メンバメソッド
         /// <summary>
         /// コンストラクタ
@@ -30,16 +32,7 @@ namespace DegitalWatch
         /// </summary>
         private void SetDate()
         {
-            degitalNumberDate.ShowNumber(DateTime.Now);
-
-            //dnmYear1000.ShowNumber(_numberList[0]);
-            //dnmYear100.ShowNumber(_numberList[1]);
-            //dnmYear10.ShowNumber(_numberList[2]);
-            //dnmYear1.ShowNumber(_numberList[3]);
-            //dnmMonth10.ShowNumber(_numberList[4]);
-            //dnmMonth1.ShowNumber(_numberList[5]);
-            //dnmDay10.ShowNumber(_numberList[6]);
-            //dnmDay1.ShowNumber(_numberList[7]);
+            degitalNumberDate.DisplayDate(DateTime.Now,m_lightUpColor);
         }
 
         /// <summary>
@@ -49,8 +42,7 @@ namespace DegitalWatch
         /// <param name="e"></param>
         private void tmrUpdateTime_Tick(object sender, EventArgs e)
         {
-            //dclHourAndMin.SwitchOnOff();
-            //dclMinAndSec.SwitchOnOff();
+            degitalNumberTime.SwitchOnOff();
 
             UpdateTime();
         }
@@ -60,17 +52,15 @@ namespace DegitalWatch
         /// </summary>
         private void UpdateTime()
         {
-            degitalNumberTime.ShowNumber(DateTime.Now);
+            degitalNumberTime.DisplayTime(DateTime.Now,m_lightUpColor);
 
-            //dnmHour10.ShowNumber(_numberList[0]);
-            //dnmHour1.ShowNumber(_numberList[1]);
-            //dnmMin10.ShowNumber(_numberList[2]);
-            //dnmMin1.ShowNumber(_numberList[3]);
-            //dnmSec10.ShowNumber(_numberList[4]);
-            //dnmSec1.ShowNumber(_numberList[5]);
         }
 
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = DateTime.Now.ToString("mm");
+        }
     }
 }
