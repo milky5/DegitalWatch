@@ -10,22 +10,42 @@ using System.Windows.Forms;
 
 namespace DegitalWatch
 {
+    /// <summary>
+    /// ユーザコントロール。hh:mm:ssの形式でデジタル表示する
+    /// </summary>
     public partial class DegitalNumberTime : UserControl
     {
+        #region メソッド
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public DegitalNumberTime()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 時間をデジタル表示する
+        /// </summary>
+        /// <param name="time"> 時間 </param>
+        /// <param name="color"> 光らせる際の色 </param>
         public void DisplayTime(DateTime time,Color color)
         {
-            dnmHour10.DisplayNumber(time.Hour % 100,color);
-            dnmHour1.DisplayNumber(time.Hour % 10, color);
-            dnmMin10.DisplayNumber(time.Minute % 100, color);
-            dnmMin1.DisplayNumber(time.Minute % 10, color);
-            dnmSec10.DisplayNumber(time.Second % 100, color);
-            dnmSec1.DisplayNumber(time.Second % 10, color);
+            var _separatedNumber = SeparateStr(time);
+
+            dnmHour10.DisplayNumber(_separatedNumber[0], color);
+            dnmHour1.DisplayNumber(_separatedNumber[1], color);
+            dnmMin10.DisplayNumber(_separatedNumber[2], color);
+            dnmMin1.DisplayNumber(_separatedNumber[3], color);
+            dnmSec10.DisplayNumber(_separatedNumber[4], color);
+            dnmSec1.DisplayNumber(_separatedNumber[5], color);
         }
+
+        /// <summary>
+        /// 時間をデジタル表示する
+        /// </summary>
+        /// <param name="time"> DateTime型に変換できる時間 </param>
+        /// <param name="color"> 光らせる際の色 </param>
         public void DisplayTime(string time, Color color)
         {
             DateTime _time;
@@ -36,11 +56,32 @@ namespace DegitalWatch
             }
         }
 
+        /// <summary>
+        /// コロン2つの点灯・消灯を切り替える
+        /// </summary>
         public void SwitchOnOff()
         {
             dclHourAndMin.SwitchOnOff();
             dclMinAndSec.SwitchOnOff();
         }
 
+        /// <summary>
+        /// DateTime型の時間部分を1桁ずつに分ける
+        /// </summary>
+        /// <param name="time"> 時間データ </param>
+        /// <returns> 1桁ずつ格納された string型リスト </returns>
+        private List<string> SeparateStr(DateTime time)
+        {
+            var _datetimeStr = time.ToString("hhmmss");
+            var _charStr = _datetimeStr.ToCharArray();
+            var _returnList = new List<string>();
+            foreach (var cs in _charStr)
+            {
+                _returnList.Add(cs.ToString());
+            }
+            return _returnList;
+        }
+
+        #endregion
     }
 }

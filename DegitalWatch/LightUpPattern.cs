@@ -12,37 +12,38 @@ namespace DegitalWatch
     /// </summary>
     public class LightUpPattern
     {
-        public static readonly LightUpPattern[] m_numberPatterns =
-    {
-                new LightUpPattern(true,true,true,
-                                   false,true,true,true),
-                new LightUpPattern(false,false,true,
-                                   false,false,true,false),
-                new LightUpPattern(true,false,true,
-                                   true,true,false,true),
-                new LightUpPattern(true,false,true,
-                                   true,false,true,true),
-                new LightUpPattern(false,true,true,
-                                   true,false,true,false),
-                new LightUpPattern(true,true,false,
-                                   true,false,true,true),
-                new LightUpPattern(true,true,false,
-                                   true,true,true,true),
-                new LightUpPattern(true,true,true,
-                                   false,false,true,false),
-                new LightUpPattern(true,true,true,
-                                   true,true,true,true),
-                new LightUpPattern(true,true,true,
-                                   true,false,true,true)
-    };
+        /// <summary>
+        /// 0～9を表示できる、光るパーツの組み合わせ
+        /// </summary>
+        /// <remarks> indexと数字が対応 </remarks>
+        public static readonly LightUpPattern[] g_numberPatterns =
+        {
+            new LightUpPattern(true,true,true,
+                               false,true,true,true),
+            new LightUpPattern(false,false,true,
+                               false,false,true,false),
+            new LightUpPattern(true,false,true,
+                               true,true,false,true),
+            new LightUpPattern(true,false,true,
+                               true,false,true,true),
+            new LightUpPattern(false,true,true,
+                               true,false,true,false),
+            new LightUpPattern(true,true,false,
+                               true,false,true,true),
+            new LightUpPattern(true,true,false,
+                               true,true,true,true),
+            new LightUpPattern(true,true,true,
+                               false,false,true,false),
+            new LightUpPattern(true,true,true,
+                               true,true,true,true),
+            new LightUpPattern(true,true,true,
+                               true,false,true,true)
+        };
 
-
-
-        #region メンバメソッド
+        #region メソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="lightUpColor"> 光らせる場合の色 </param>
         /// <param name="TopCenter"> 最上部を光らせるか </param>
         /// <param name="TopLeft"> 上部左側を光らせるか </param>
         /// <param name="TopRight"> 上部右側を光らせるか </param>
@@ -51,7 +52,7 @@ namespace DegitalWatch
         /// <param name="BottomRight"> 下部右側を光らせるか </param>
         /// <param name="BottomCenter"> 最下部を光らせるか </param>
         public LightUpPattern(bool TopCenter, bool TopLeft,
-                              bool TopRight, bool MiddleCenter, bool BottomLeft, 
+                              bool TopRight, bool MiddleCenter, bool BottomLeft,
                               bool BottomRight, bool BottomCenter)
         {
             this.TopCenter = TopCenter;

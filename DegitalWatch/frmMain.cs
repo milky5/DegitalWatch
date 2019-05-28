@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace DegitalWatch
 {
+    /// <summary>
+    /// Mainフォーム
+    /// </summary>
     public partial class frmMain : Form
     {
-
-        private Color m_lightUpColor = SystemColors.ControlDarkDark;
-
-        #region メンバメソッド
+        #region メソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
         public frmMain()
         {
             InitializeComponent();
+
+            LightUpColor = SystemColors.ControlDarkDark;
 
             SetDate();
             tmrUpdateTime.Start();
@@ -32,7 +34,7 @@ namespace DegitalWatch
         /// </summary>
         private void SetDate()
         {
-            degitalNumberDate.DisplayDate(DateTime.Now,m_lightUpColor);
+            degitalNumberDate.DisplayDate(DateTime.Now,LightUpColor);
         }
 
         /// <summary>
@@ -52,15 +54,19 @@ namespace DegitalWatch
         /// </summary>
         private void UpdateTime()
         {
-            degitalNumberTime.DisplayTime(DateTime.Now,m_lightUpColor);
-
+            degitalNumberTime.DisplayTime(DateTime.Now,LightUpColor);
         }
 
         #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = DateTime.Now.ToString("mm");
+            textBox1.Text = DateTime.Now.ToString("yyyyMMdd");
         }
+
+
+        #region プロパティ
+        public Color LightUpColor { get; set; }
+        #endregion
     }
 }

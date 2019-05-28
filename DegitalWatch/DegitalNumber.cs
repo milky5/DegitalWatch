@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace DegitalWatch
 {
+    /// <summary>
+    /// ユーザコントロール。1つの文字を表示する
+    /// </summary>
     public partial class DegitalNumber : UserControl
     {
-        #region メンバ変数
-        #endregion
 
-
-
-
-
-
-        #region メンバメソッド
+        #region メソッド
+        public Color ConvertBoolToColor(LightUpPattern number, Color color)
+        {
+            return color;
+        }
 
         /// <summary>
         /// コンストラクタ
@@ -62,9 +62,38 @@ namespace DegitalWatch
         /// 数字をデジタル表示する
         /// </summary>
         /// <param name="number"> デジタル表示したい数字 </param>
-        public void DisplayNumber(LightUpPattern number,Color color)
+        /// <param name="color"> 光らせる際の色 </param>
+        public void DisplayNumber(int number, Color color)
         {
-            if (number.TopCenter)
+            if (0 <= number && number <= 9)
+            {
+                DisplayPattern(LightUpPattern.g_numberPatterns[number], color);
+            }
+        }
+
+        /// <summary>
+        /// 数字をデジタル表示する
+        /// </summary>
+        /// <param name="number"> デジタル表示したい数字 </param>
+        /// <param name="color"> 光らせる際の色 </param>
+        public void DisplayNumber(string number, Color color)
+        {
+            int _convertedNumber;
+            var _result = int.TryParse(number, out _convertedNumber);
+            if (_result)
+            {
+                DisplayNumber(_convertedNumber, color);
+            }
+        }
+
+        /// <summary>
+        /// パターンをデジタル表示する
+        /// </summary>
+        /// <param name="pattern"> 光るパーツの組み合わせ </param>
+        /// <param name="color"> 光らせる際の色 </param>
+        public void DisplayPattern(LightUpPattern pattern, Color color)
+        {
+            if (pattern.TopCenter)
             {
                 lblTopCenter.BackColor = color;
             }
@@ -73,7 +102,7 @@ namespace DegitalWatch
                 lblTopCenter.BackColor = DefaultBackColor;
             }
 
-            if (number.TopLeft)
+            if (pattern.TopLeft)
             {
                 lblTopLeft.BackColor = color;
             }
@@ -82,7 +111,7 @@ namespace DegitalWatch
                 lblTopLeft.BackColor = DefaultBackColor;
             }
 
-            if (number.TopRight)
+            if (pattern.TopRight)
             {
                 lblTopRight.BackColor = color;
             }
@@ -91,7 +120,7 @@ namespace DegitalWatch
                 lblTopRight.BackColor = DefaultBackColor;
             }
 
-            if (number.MiddleCenter)
+            if (pattern.MiddleCenter)
             {
                 lblMiddleCenter.BackColor = color;
             }
@@ -100,7 +129,7 @@ namespace DegitalWatch
                 lblMiddleCenter.BackColor = DefaultBackColor;
             }
 
-            if (number.BottomRight)
+            if (pattern.BottomRight)
             {
                 lblBottomRight.BackColor = color;
             }
@@ -109,7 +138,7 @@ namespace DegitalWatch
                 lblBottomRight.BackColor = DefaultBackColor;
             }
 
-            if (number.BottomLeft)
+            if (pattern.BottomLeft)
             {
                 lblBottomLeft.BackColor = color;
             }
@@ -118,38 +147,13 @@ namespace DegitalWatch
                 lblBottomLeft.BackColor = DefaultBackColor;
             }
 
-            if (number.BottomCenter)
+            if (pattern.BottomCenter)
             {
                 lblBottomCenter.BackColor = color;
             }
             else
             {
                 lblBottomCenter.BackColor = DefaultBackColor;
-            }
-            
-            
-        }
-
-        public Color ConvertBoolToColor(LightUpPattern number,Color color)
-        {
-            return color;
-        }
-
-        public void DisplayNumber(int number,Color color)
-        {
-            if (0 <= number && number <= 9)
-            {
-                DisplayNumber(LightUpPattern.m_numberPatterns[number], color);
-            }
-        }
-
-        public void DisplayNumber(string number,Color color)
-        {
-            var _convertedNumber = 10;
-            var _result = int.TryParse(number, out _convertedNumber);
-            if (_result)
-            {
-                DisplayNumber(_convertedNumber, color);
             }
         }
         #endregion
