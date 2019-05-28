@@ -61,6 +61,9 @@ namespace DegitalWatch
         #endregion
 
         #region プロパティ
+        /// <summary>
+        /// 光らせる際の色
+        /// </summary>
         public Color LightUpColor { get; set; }
         #endregion
     }

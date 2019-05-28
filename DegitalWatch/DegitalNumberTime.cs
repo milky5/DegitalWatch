@@ -31,7 +31,7 @@ namespace DegitalWatch
         /// <param name="color"> 光らせる際の色 </param>
         public void DisplayTime(DateTime time,Color color)
         {
-            var _separatedNumber = SeparateStr(time);
+            var _separatedNumber = SeparateToTimeStr(time);
 
             dnmHour10.DisplayNumber(_separatedNumber[0], color);
             dnmHour1.DisplayNumber(_separatedNumber[1], color);
@@ -64,20 +64,11 @@ namespace DegitalWatch
         }
 
         /// <summary>
-        /// コロン2つの点灯・消灯を切り替える
-        /// </summary>
-        public void SwitchOnOff()
-        {
-            dclHourAndMin.SwitchOnOff();
-            dclMinAndSec.SwitchOnOff();
-        }
-
-        /// <summary>
         /// DateTime型の時間部分を1桁ずつに分ける
         /// </summary>
         /// <param name="time"> 時間データ </param>
         /// <returns> 1桁ずつ格納された string型リスト </returns>
-        private List<string> SeparateStr(DateTime time)
+        private List<string> SeparateToTimeStr(DateTime time)
         {
             var _datetimeStr = time.ToString("HHmmss");
             var _charStr = _datetimeStr.ToCharArray();
@@ -89,6 +80,14 @@ namespace DegitalWatch
             return _returnList;
         }
 
+        /// <summary>
+        /// コロン2つの点灯・消灯を切り替える
+        /// </summary>
+        public void SwitchOnOff()
+        {
+            dclHourAndMin.SwitchOnOff();
+            dclMinAndSec.SwitchOnOff();
+        }
         #endregion
     }
 }

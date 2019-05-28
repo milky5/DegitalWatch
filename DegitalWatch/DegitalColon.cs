@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace DegitalWatch
 {
+    /// <summary>
+    /// 時刻表示で必要なコロン
+    /// </summary>
     public partial class DegitalColon : UserControl
     {
         #region メンバメソッド

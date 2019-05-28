@@ -17,15 +17,6 @@ namespace DegitalWatch
     {
 
         #region メソッド
-        private Color JudgeColor(bool lightOn, Color lightUp ,Color lightDown)
-        {
-            if (lightOn)
-            {
-                return lightUp;
-            }
-            return lightDown;
-        }
-
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -114,6 +105,22 @@ namespace DegitalWatch
             lblBottomRight.BackColor = JudgeColor(pattern.BottomRight, color, _lightDownColor);
             lblBottomLeft.BackColor = JudgeColor(pattern.BottomLeft, color, _lightDownColor);
             lblBottomCenter.BackColor = JudgeColor(pattern.BottomCenter, color, _lightDownColor);
+        }
+
+        /// <summary>
+        /// boolを判定し、colorを返す
+        /// </summary>
+        /// <param name="lightOn"> 光らせるかどうか </param>
+        /// <param name="lightUp"> 光る場合の色 </param>
+        /// <param name="lightDown"> 光らない場合の色 </param>
+        /// <returns> 判定結果の色 </returns>
+        private Color JudgeColor(bool lightOn, Color lightUp, Color lightDown)
+        {
+            if (lightOn)
+            {
+                return lightUp;
+            }
+            return lightDown;
         }
         #endregion
 
