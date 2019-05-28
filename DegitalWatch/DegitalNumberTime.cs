@@ -39,6 +39,9 @@ namespace DegitalWatch
             dnmMin1.DisplayNumber(_separatedNumber[3], color);
             dnmSec10.DisplayNumber(_separatedNumber[4], color);
             dnmSec1.DisplayNumber(_separatedNumber[5], color);
+
+            dclHourAndMin.LightUpColor = color;
+            dclMinAndSec.LightUpColor = color;
         }
 
         /// <summary>
@@ -53,6 +56,10 @@ namespace DegitalWatch
             if (_result)
             {
                 DisplayTime(_time, color);
+            }
+            else
+            {
+                throw new Exception("DateTime型に変換できませんでした");
             }
         }
 

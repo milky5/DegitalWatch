@@ -57,6 +57,10 @@ namespace DegitalWatch
             {
                 DisplayDate(_date,color);
             }
+            else
+            {
+                throw new Exception("DateTime型に変換できませんでした");
+            }
         }
 
         /// <summary>

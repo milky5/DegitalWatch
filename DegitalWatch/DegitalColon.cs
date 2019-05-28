@@ -12,13 +12,6 @@ namespace DegitalWatch
 {
     public partial class DegitalColon : UserControl
     {
-        #region メンバ変数
-        /// <summary>
-        /// コロンが点灯中か
-        /// </summary>
-        private bool m_isLightUp;
-        #endregion
-
         #region メンバメソッド
         /// <summary>
         /// コンストラクタ
@@ -33,10 +26,10 @@ namespace DegitalWatch
         /// </summary>
         public void SwitchOnOff()
         {
-            if (m_isLightUp)
+            if (IsLightUp)
             {
-                lblTopPeriod.BackColor = SystemColors.ControlDarkDark;
-                lblBottomPeriod.BackColor = SystemColors.ControlDarkDark;
+                lblTopPeriod.BackColor = LightUpColor;
+                lblBottomPeriod.BackColor = LightUpColor;
             }
             else
             {
@@ -44,8 +37,19 @@ namespace DegitalWatch
                 lblBottomPeriod.BackColor = DefaultBackColor;
             }
 
-            m_isLightUp = !m_isLightUp;
+            IsLightUp = !IsLightUp;
         }
+        #endregion
+
+        #region プロパティ
+        /// <summary>
+        /// コロンが点灯中か
+        /// </summary>
+        private bool IsLightUp { get; set; }
+        /// <summary>
+        /// 点灯時の色
+        /// </summary>
+        public Color LightUpColor { get; set; }
         #endregion
     }
 }

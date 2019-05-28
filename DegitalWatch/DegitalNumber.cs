@@ -17,9 +17,13 @@ namespace DegitalWatch
     {
 
         #region メソッド
-        public Color ConvertBoolToColor(LightUpPattern number, Color color)
+        private Color JudgeColor(bool lightOn, Color lightUp ,Color lightDown)
         {
-            return color;
+            if (lightOn)
+            {
+                return lightUp;
+            }
+            return lightDown;
         }
 
         /// <summary>
@@ -69,6 +73,10 @@ namespace DegitalWatch
             {
                 DisplayPattern(LightUpPattern.g_numberPatterns[number], color);
             }
+            else
+            {
+                throw new Exception("0～9以外の数字が入力されています");
+            }
         }
 
         /// <summary>
@@ -84,6 +92,10 @@ namespace DegitalWatch
             {
                 DisplayNumber(_convertedNumber, color);
             }
+            else
+            {
+                throw new Exception("数字と認識できませんでした");
+            }
         }
 
         /// <summary>
@@ -93,68 +105,15 @@ namespace DegitalWatch
         /// <param name="color"> 光らせる際の色 </param>
         public void DisplayPattern(LightUpPattern pattern, Color color)
         {
-            if (pattern.TopCenter)
-            {
-                lblTopCenter.BackColor = color;
-            }
-            else
-            {
-                lblTopCenter.BackColor = DefaultBackColor;
-            }
+            var _lightDownColor = DefaultBackColor;
 
-            if (pattern.TopLeft)
-            {
-                lblTopLeft.BackColor = color;
-            }
-            else
-            {
-                lblTopLeft.BackColor = DefaultBackColor;
-            }
-
-            if (pattern.TopRight)
-            {
-                lblTopRight.BackColor = color;
-            }
-            else
-            {
-                lblTopRight.BackColor = DefaultBackColor;
-            }
-
-            if (pattern.MiddleCenter)
-            {
-                lblMiddleCenter.BackColor = color;
-            }
-            else
-            {
-                lblMiddleCenter.BackColor = DefaultBackColor;
-            }
-
-            if (pattern.BottomRight)
-            {
-                lblBottomRight.BackColor = color;
-            }
-            else
-            {
-                lblBottomRight.BackColor = DefaultBackColor;
-            }
-
-            if (pattern.BottomLeft)
-            {
-                lblBottomLeft.BackColor = color;
-            }
-            else
-            {
-                lblBottomLeft.BackColor = DefaultBackColor;
-            }
-
-            if (pattern.BottomCenter)
-            {
-                lblBottomCenter.BackColor = color;
-            }
-            else
-            {
-                lblBottomCenter.BackColor = DefaultBackColor;
-            }
+            lblTopCenter.BackColor = JudgeColor(pattern.TopCenter, color, _lightDownColor);
+            lblTopLeft.BackColor = JudgeColor(pattern.TopLeft, color, _lightDownColor);
+            lblTopRight.BackColor = JudgeColor(pattern.TopRight, color, _lightDownColor);
+            lblMiddleCenter.BackColor = JudgeColor(pattern.MiddleCenter, color, _lightDownColor);
+            lblBottomRight.BackColor = JudgeColor(pattern.BottomRight, color, _lightDownColor);
+            lblBottomLeft.BackColor = JudgeColor(pattern.BottomLeft, color, _lightDownColor);
+            lblBottomCenter.BackColor = JudgeColor(pattern.BottomCenter, color, _lightDownColor);
         }
         #endregion
 

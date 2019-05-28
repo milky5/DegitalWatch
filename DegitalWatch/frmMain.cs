@@ -24,6 +24,7 @@ namespace DegitalWatch
             InitializeComponent();
 
             LightUpColor = SystemColors.ControlDarkDark;
+            //LightUpColor = Color.Orange;
 
             SetDate();
             tmrUpdateTime.Start();
