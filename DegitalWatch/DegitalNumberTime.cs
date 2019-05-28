@@ -79,7 +79,7 @@ namespace DegitalWatch
         /// <returns> 1桁ずつ格納された string型リスト </returns>
         private List<string> SeparateStr(DateTime time)
         {
-            var _datetimeStr = time.ToString("hhmmss");
+            var _datetimeStr = time.ToString("HHmmss");
             var _charStr = _datetimeStr.ToCharArray();
             var _returnList = new List<string>();
             foreach (var cs in _charStr)
